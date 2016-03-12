@@ -4,7 +4,7 @@
 //
 //  Created by xiaohui on 15-6-15.
 //  Copyright (c) 2015年 qiantou. All rights reserved.
-//
+//  https://github.com/CoderZhuXH/XHToast
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
