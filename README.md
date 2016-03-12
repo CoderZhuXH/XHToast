@@ -1,6 +1,6 @@
 # XHToast
 ## 效果
-![image](https://raw.githubusercontent.com/CoderZhuXH/XHTabBar/master/Demo%E6%95%88%E6%9E%9C%E5%9B%BE.png)
+![image](https://raw.githubusercontent.com/CoderZhuXH/XHToast/master/DEMO.png)
 
 ## 使用方法
 * 将XHToast文件夹拖入工程导入XHToast.h 头文件 调用相关方法即可
