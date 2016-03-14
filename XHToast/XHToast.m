@@ -10,6 +10,8 @@
 
 //Toast默认停留时间
 #define ToastDispalyDuration 1.2f
+//Toast到顶端/底端默认距离
+#define ToastSpace 100.0f
 //Toast背景颜色
 #define ToastBackgroundColor [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.75]
 
@@ -126,11 +128,11 @@
 #pragma mark-上方显示
 + (void)showTopWithText:(NSString *)text{
     
-    [XHToast showTopWithText:text  topOffset:100.0f duration:ToastDispalyDuration];
+    [XHToast showTopWithText:text  topOffset:ToastSpace duration:ToastDispalyDuration];
 }
 + (void)showTopWithText:(NSString *)text duration:(CGFloat)duration
 {
-     [XHToast showTopWithText:text  topOffset:100.0f duration:duration];
+     [XHToast showTopWithText:text  topOffset:ToastSpace duration:duration];
 }
 + (void)showTopWithText:(NSString *)text topOffset:(CGFloat)topOffset{
     [XHToast showTopWithText:text  topOffset:topOffset duration:ToastDispalyDuration];
@@ -144,11 +146,11 @@
 #pragma mark-下方显示
 + (void)showBottomWithText:(NSString *)text{
     
-    [XHToast showBottomWithText:text  bottomOffset:100.0f duration:ToastDispalyDuration];
+    [XHToast showBottomWithText:text  bottomOffset:ToastSpace duration:ToastDispalyDuration];
 }
 + (void)showBottomWithText:(NSString *)text duration:(CGFloat)duration
 {
-      [XHToast showBottomWithText:text  bottomOffset:100.0f duration:duration];
+      [XHToast showBottomWithText:text  bottomOffset:ToastSpace duration:duration];
 }
 + (void)showBottomWithText:(NSString *)text bottomOffset:(CGFloat)bottomOffset{
     [XHToast showBottomWithText:text  bottomOffset:bottomOffset duration:ToastDispalyDuration];
