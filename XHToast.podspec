@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "XHToast"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "简洁轻便提示工具类"
   s.homepage     = "https://github.com/CoderZhuXH/XHToast"
   s.license      = { :type => "MIT", :file => "LICENSE" }
