@@ -1,9 +1,10 @@
 # XHToast
+* 简洁轻便提示工具类,一行代码搞定提示信息
+
 ## 效果
 ![image](https://raw.githubusercontent.com/CoderZhuXH/XHToast/master/DEMO.png)
 
 ## 使用方法
-* 将XHToast文件夹拖入工程导入XHToast.h 头文件 调用相关方法即可
 
 ```objc
 #pragma mark-中间显示
@@ -82,3 +83,22 @@
 + (void)showBottomWithText:(NSString *)text bottomOffset:(CGFloat)bottomOffset duration:(CGFloat)duration;
 
 ```
+
+##  安装
+### 手动添加:<br>
+*   1.将 XHToast 文件夹添加到工程目录中<br>
+*   2.导入 XHToast.h
+
+### CocoaPods:<br>
+*   1.在 Podfile 中添加 pod 'XHToast'<br>
+*   2.执行 pod install 或 pod update<br>
+*   3.导入 XHToast.h
+
+##  系统要求
+*   该项目最低支持 iOS 7.0 和 Xcode 7.0
+
+##  许可证
+XHNetworking 使用 MIT 许可证，详情见 LICENSE 文件
+
+
+
