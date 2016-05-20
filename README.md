@@ -98,7 +98,7 @@
 *   该项目最低支持 iOS 7.0 和 Xcode 7.0
 
 ##  许可证
-XHNetworking 使用 MIT 许可证，详情见 LICENSE 文件
+XHToast 使用 MIT 许可证，详情见 LICENSE 文件
 
 
 
