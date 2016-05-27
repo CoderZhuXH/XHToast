@@ -1,7 +1,7 @@
 //
 //  XHToast.m
 
-//  Copyright (c) 2016 XHNetworking (https://github.com/CoderZhuXH/XHToast)
+//  Copyright (c) 2016 XHToast (https://github.com/CoderZhuXH/XHToast)
 
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
