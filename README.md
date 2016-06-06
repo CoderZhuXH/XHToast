@@ -2,7 +2,7 @@
 * 简洁轻便提示工具类,一行代码搞定提示信息
 
 ## 效果
-![image](https://raw.githubusercontent.com/CoderZhuXH/XHToast/master/DEMO.png)
+![image](http://h.hiphotos.baidu.com/image/pic/item/023b5bb5c9ea15ce2973e439be003af33a87b264.jpg)
 
 ## 使用方法
 
