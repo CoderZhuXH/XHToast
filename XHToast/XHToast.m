@@ -37,12 +37,8 @@
 }
 
 @end
-@implementation XHToast
 
-- (void)dealloc{
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
-}
+@implementation XHToast
 
 - (id)initWithText:(NSString *)text{
     if (self = [super init]) {
