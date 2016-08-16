@@ -66,14 +66,10 @@
         [_contentView addTarget:self action:@selector(toastTaped:) forControlEvents:UIControlEventTouchDown];
         _contentView.alpha = 0.0f;
         _duration = ToastDispalyDuration;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChanged:) name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
+        
     }
     
     return self;
-}
-
-- (void)deviceOrientationDidChanged:(NSNotification *)notify{
-    [self hideAnimation];
 }
 
 -(void)dismissToast{
