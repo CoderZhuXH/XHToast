@@ -1,5 +1,15 @@
 # XHToast
 #### 简洁轻便提示工具,一行代码,既可完成提示信息显示.
+
+[![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg?maxAge=2592000)](https://github.com/CoderZhuXH/XHToast)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/CoderZhuXH/XHToast)
+[![Version Status](https://img.shields.io/cocoapods/v/XHToast.svg?style=flat)](http://cocoadocs.org/docsets/XHToast)
+[![Support](https://img.shields.io/badge/support-iOS%207%2B-brightgreen.svg)](https://github.com/CoderZhuXH/XHToast)
+[![Pod Platform](https://img.shields.io/cocoapods/p/XHToast.svg?style=flat)](http://cocoadocs.org/docsets/XHToast)
+[![Pod License](https://img.shields.io/cocoapods/l/XHToast.svg?style=flat)](https://github.com/CoderZhuXH/XHToast/blob/master/LICENSE)
+
+==============
+
 #### Swift版本请戳这里>>> https://github.com/CoderZhuXH/XHToastSwift
 
 ### 技术交流群(群号:537476189)
