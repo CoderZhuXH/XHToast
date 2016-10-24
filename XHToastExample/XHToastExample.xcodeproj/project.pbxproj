@@ -124,6 +124,7 @@
 				TargetAttributes = {
 					4B1670B61C93B6A80053574B = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 476A3P8R72;
 					};
 				};
 			};
@@ -268,9 +269,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = XHToastExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = qiantou.XHToastExample;
+				PRODUCT_BUNDLE_IDENTIFIER = returnoc.com.XHToastExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -279,9 +281,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = XHToastExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = qiantou.XHToastExample;
+				PRODUCT_BUNDLE_IDENTIFIER = returnoc.com.XHToastExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -305,6 +308,7 @@
 				4B1670CA1C93B6A90053574B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

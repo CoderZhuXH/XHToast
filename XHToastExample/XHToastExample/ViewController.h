@@ -3,7 +3,7 @@
 //  XHToastExample
 //
 //  Created by xiaohui on 15/12/12.
-//  Copyright © 2015年 qiantou. All rights reserved.
+//  Copyright © 2015年 returnoc.com. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

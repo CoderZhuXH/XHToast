@@ -1,7 +1,7 @@
 //
 //  XHToast.m
 
-//  Copyright (c) 2016 XHToast (https://github.com/CoderZhuXH/XHToast)
+//  Copyright (c) 2016 XHToast ( https://github.com/CoderZhuXH/XHToast )
 
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -31,11 +31,8 @@
 #define ToastBackgroundColor [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.75]
 
 @interface XHToast ()
-{
-    UIButton *_contentView;
-    CGFloat  _duration;
-}
-
+@property(nonatomic,strong)UIButton *contentView;
+@property(nonatomic,assign)CGFloat duration;
 @end
 
 @implementation XHToast
@@ -54,14 +51,14 @@
         textLabel.text = text;
         textLabel.numberOfLines = 0;
         
-        _contentView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, textLabel.frame.size.width, textLabel.frame.size.height)];
-        _contentView.layer.cornerRadius = 20.0f;
-        _contentView.backgroundColor = ToastBackgroundColor;
-        [_contentView addSubview:textLabel];
-        _contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        [_contentView addTarget:self action:@selector(toastTaped:) forControlEvents:UIControlEventTouchDown];
-        _contentView.alpha = 0.0f;
-        _duration = ToastDispalyDuration;
+        self.contentView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, textLabel.frame.size.width, textLabel.frame.size.height)];
+        self.contentView.layer.cornerRadius = 20.0f;
+        self.contentView.backgroundColor = ToastBackgroundColor;
+        [self.contentView addSubview:textLabel];
+        self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        [self.contentView addTarget:self action:@selector(toastTaped:) forControlEvents:UIControlEventTouchDown];
+        self.contentView.alpha = 0.0f;
+        self.duration = ToastDispalyDuration;
         
     }
     
@@ -69,22 +66,20 @@
 }
 
 -(void)dismissToast{
-    [_contentView removeFromSuperview];
+    
+    [self.contentView removeFromSuperview];
 }
 
 -(void)toastTaped:(UIButton *)sender{
+    
     [self hideAnimation];
-}
-
-- (void)setDuration:(CGFloat)duration{
-    _duration = duration;
 }
 
 -(void)showAnimation{
     [UIView beginAnimations:@"show" context:NULL];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     [UIView setAnimationDuration:0.3];
-    _contentView.alpha = 1.0f;
+    self.contentView.alpha = 1.0f;
     [UIView commitAnimations];
 }
 
@@ -94,43 +89,46 @@
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDidStopSelector:@selector(dismissToast)];
     [UIView setAnimationDuration:0.3];
-    _contentView.alpha = 0.0f;
+    self.contentView.alpha = 0.0f;
     [UIView commitAnimations];
 }
-
-- (void)show{
-    UIWindow *window = [[[UIApplication sharedApplication] windows] lastObject];
-    _contentView.center = window.center;
-    [window  addSubview:_contentView];
-    [self showAnimation];
-    [self performSelector:@selector(hideAnimation) withObject:nil afterDelay:_duration];
++(UIWindow *)window
+{
+    return [[[UIApplication sharedApplication] windows] lastObject];
 }
 
-- (void)showFromTopOffset:(CGFloat)top{
-    UIWindow *window = [[[UIApplication sharedApplication] windows] lastObject];
-    _contentView.center = CGPointMake(window.center.x, top + _contentView.frame.size.height/2);
-    [window  addSubview:_contentView];
+- (void)showIn:(UIView *)view{
+    self.contentView.center = view.center;
+    [view  addSubview:self.contentView];
     [self showAnimation];
-    [self performSelector:@selector(hideAnimation) withObject:nil afterDelay:_duration];
+    [self performSelector:@selector(hideAnimation) withObject:nil afterDelay:self.duration];
 }
 
-- (void)showFromBottomOffset:(CGFloat)bottom{
-    UIWindow *window = [[[UIApplication sharedApplication] windows] lastObject];
-    _contentView.center = CGPointMake(window.center.x, window.frame.size.height-(bottom + _contentView.frame.size.height/2));
-    [window  addSubview:_contentView];
+- (void)showIn:(UIView *)view fromTopOffset:(CGFloat)top{
+    self.contentView.center = CGPointMake(view.center.x, top + self.contentView.frame.size.height/2);
+    [view  addSubview:self.contentView];
     [self showAnimation];
-    [self performSelector:@selector(hideAnimation) withObject:nil afterDelay:_duration];
+    [self performSelector:@selector(hideAnimation) withObject:nil afterDelay:self.duration];
+}
+
+- (void)showIn:(UIView *)view fromBottomOffset:(CGFloat)bottom{
+    self.contentView.center = CGPointMake(view.center.x, view.frame.size.height-(bottom + self.contentView.frame.size.height/2));
+    [view  addSubview:self.contentView];
+    [self showAnimation];
+    [self performSelector:@selector(hideAnimation) withObject:nil afterDelay:self.duration];
 }
 
 #pragma mark-中间显示
 + (void)showCenterWithText:(NSString *)text{
+    
     [XHToast showCenterWithText:text duration:ToastDispalyDuration];
 }
 
 + (void)showCenterWithText:(NSString *)text duration:(CGFloat)duration{
+    
     XHToast *toast = [[XHToast alloc] initWithText:text];
-    [toast setDuration:duration];
-    [toast show];
+    toast.duration = duration;
+    [toast showIn:[self window]];
 }
 #pragma mark-上方显示
 + (void)showTopWithText:(NSString *)text{
@@ -147,8 +145,8 @@
 
 + (void)showTopWithText:(NSString *)text topOffset:(CGFloat)topOffset duration:(CGFloat)duration{
     XHToast *toast = [[XHToast alloc] initWithText:text];
-    [toast setDuration:duration];
-    [toast showFromTopOffset:topOffset];
+    toast.duration = duration;
+    [toast showIn:[self window] fromTopOffset:topOffset];
 }
 #pragma mark-下方显示
 + (void)showBottomWithText:(NSString *)text{
@@ -165,8 +163,73 @@
 
 + (void)showBottomWithText:(NSString *)text bottomOffset:(CGFloat)bottomOffset duration:(CGFloat)duration{
     XHToast *toast = [[XHToast alloc] initWithText:text];
-    [toast setDuration:duration];
-    [toast showFromBottomOffset:bottomOffset];
+    toast.duration = duration;
+    [toast showIn:[self window] fromBottomOffset:bottomOffset];
 }
 
 @end
+
+
+@implementation UIView (XHToast)
+
+#pragma mark-中间显示
+- (void)showXHToastCenterWithText:(NSString *)text
+{
+    [self showXHToastCenterWithText:text duration:ToastDispalyDuration];
+}
+
+- (void)showXHToastCenterWithText:(NSString *)text duration:(CGFloat)duration
+{
+    XHToast *toast = [[XHToast alloc] initWithText:text];
+    toast.duration = duration;
+    [toast showIn:self];
+}
+
+#pragma mark-上方显示
+- (void)showXHToastTopWithText:(NSString *)text
+{
+    [self showXHToastTopWithText:text topOffset:ToastSpace duration:ToastDispalyDuration];
+}
+
+- (void)showXHToastTopWithText:(NSString *)text duration:(CGFloat)duration
+{
+    [self showXHToastTopWithText:text topOffset:ToastSpace duration:duration];
+}
+
+- (void)showXHToastTopWithText:(NSString *)text topOffset:(CGFloat)topOffset
+{
+    [self showXHToastTopWithText:text topOffset:topOffset duration:ToastDispalyDuration];
+}
+
+- (void)showXHToastTopWithText:(NSString *)text topOffset:(CGFloat)topOffset duration:(CGFloat)duration
+{
+    XHToast *toast = [[XHToast alloc] initWithText:text];
+    toast.duration = duration;
+    [toast showIn:self fromTopOffset:topOffset];
+}
+
+#pragma mark-下方显示
+- (void)showXHToastBottomWithText:(NSString *)text
+{
+    [self showXHToastBottomWithText:text bottomOffset:ToastSpace duration:ToastDispalyDuration];
+}
+
+- (void)showXHToastBottomWithText:(NSString *)text duration:(CGFloat)duration
+{
+    [self showXHToastBottomWithText:text bottomOffset:ToastSpace duration:duration];
+}
+
+- (void)showXHToastBottomWithText:(NSString *)text bottomOffset:(CGFloat)bottomOffset
+{
+    [self showXHToastBottomWithText:text bottomOffset:bottomOffset duration:ToastDispalyDuration];
+}
+
+- (void)showXHToastBottomWithText:(NSString *)text bottomOffset:(CGFloat)bottomOffset duration:(CGFloat)duration
+{
+    XHToast *toast = [[XHToast alloc] initWithText:text];
+    toast.duration = duration;
+    [toast showIn:self fromBottomOffset:bottomOffset];
+}
+
+@end
+
