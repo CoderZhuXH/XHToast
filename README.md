@@ -129,7 +129,7 @@
 + (void)showBottomWithText:(NSString *)text bottomOffset:(CGFloat)bottomOffset duration:(CGFloat)duration;
 
 ```
-###2.在view上显示(通过view调用)
+####2.在view上显示(通过view调用)
 
 ```
 /**
