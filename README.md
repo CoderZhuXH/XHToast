@@ -129,69 +129,75 @@
 + (void)showBottomWithText:(NSString *)text bottomOffset:(CGFloat)bottomOffset duration:(CGFloat)duration;
 
 ```
+
 ####2.在view上显示(通过view调用)
 
 ```
+#pragma mark-中间显示
+
 /**
- *  中间显示+自定义停留时间
- *
- *  @param text     内容
- *  @param duration 停留时间
- */
+*  中间显示+自定义停留时间
+*
+*  @param text     内容
+*  @param duration 停留时间
+*/
 - (void)showXHToastCenterWithText:(NSString *)text duration:(CGFloat)duration;
 
 #pragma mark-上方显示
 
 /**
- *  上方显示+自定义停留时间
- *
- *  @param text     内容
- *  @param duration 停留时间
- */
+*  上方显示+自定义停留时间
+*
+*  @param text     内容
+*  @param duration 停留时间
+*/
 - (void)showXHToastTopWithText:(NSString *)text duration:(CGFloat)duration;
+
 /**
- *  上方显示+自定义距顶端距离
- *
- *  @param text      内容
- *  @param topOffset 到顶端距离
- */
+*  上方显示+自定义距顶端距离
+*
+*  @param text      内容
+*  @param topOffset 到顶端距离
+*/
 - (void)showXHToastTopWithText:(NSString *)text topOffset:(CGFloat)topOffset;
+
 /**
- *  上方显示+自定义距顶端距离+自定义停留时间
- *
- *  @param text      内容
- *  @param topOffset 到顶端距离
- *  @param duration  停留时间
- */
+*  上方显示+自定义距顶端距离+自定义停留时间
+*
+*  @param text      内容
+*  @param topOffset 到顶端距离
+*  @param duration  停留时间
+*/
 - (void)showXHToastTopWithText:(NSString *)text topOffset:(CGFloat)topOffset duration:(CGFloat)duration;
 
 #pragma mark-下方显示
 
 /**
- *  下方显示+自定义停留时间
- *
- *  @param text     内容
- *  @param duration 停留时间
- */
+*  下方显示+自定义停留时间
+*
+*  @param text     内容
+*  @param duration 停留时间
+*/
 - (void)showXHToastBottomWithText:(NSString *)text duration:(CGFloat)duration;
+
 /**
- *  下方显示+自定义距底端距离
- *
- *  @param text         内容
- *  @param bottomOffset 距底端距离
- */
+*  下方显示+自定义距底端距离
+*
+*  @param text         内容
+*  @param bottomOffset 距底端距离
+*/
 - (void)showXHToastBottomWithText:(NSString *)text bottomOffset:(CGFloat)bottomOffset;
+
 /**
- *  下方显示+自定义距底端距离+自定义停留时间
- *
- *  @param text         内容
- *  @param bottomOffset 距底端距离
- *  @param duration     停留时间
- */
+*  下方显示+自定义距底端距离+自定义停留时间
+*
+*  @param text         内容
+*  @param bottomOffset 距底端距离
+*  @param duration     停留时间
+*/
 - (void)showXHToastBottomWithText:(NSString *)text bottomOffset:(CGFloat)bottomOffset duration:(CGFloat)duration;
 
 ```
-
 
 ##  安装
 ### 1.手动添加:<br>
