@@ -132,7 +132,7 @@
 
 ####2.在view上显示(通过view调用)
 
-```
+```objc
 #pragma mark-中间显示
 
 /**
