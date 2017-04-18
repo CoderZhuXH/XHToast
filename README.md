@@ -61,7 +61,7 @@
 ```
 ### 2.自定义Toast停留时间+到屏幕上端/下端距离(见如下方法)
 
-####1.显示至window(通过XHToast调用)
+#### 1.显示至window(通过XHToast调用)
 
 ```objc
 #pragma mark-中间显示
@@ -130,7 +130,7 @@
 
 ```
 
-####2.在view上显示(通过view调用)
+#### 2.在view上显示(通过view调用)
 
 ```objc
 #pragma mark-中间显示
