@@ -94,7 +94,10 @@
 }
 +(UIWindow *)window
 {
-    return [[[UIApplication sharedApplication] windows] lastObject];
+    UIWindow *window =  [[[UIApplication sharedApplication] windows] lastObject];
+    if(window && !window.hidden) return window;
+    window = [UIApplication sharedApplication].delegate.window;
+    return window;
 }
 
 - (void)showIn:(UIView *)view{

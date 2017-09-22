@@ -26,6 +26,10 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+/**
+ 版本: 1.4.0
+ 发布: 2017.09.22
+ */
 #pragma mark - 1.在window上显示
 @interface XHToast : NSObject
 
