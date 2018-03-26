@@ -104,12 +104,13 @@
     NSArray *windows = [UIApplication sharedApplication].windows;
     for(UIWindow *window in [windows reverseObjectEnumerator]) {
         if ([window isKindOfClass:[UIWindow class]] &&
-            CGRectEqualToRect(window.bounds, [UIScreen mainScreen].bounds))
+            CGRectEqualToRect(window.bounds, [UIScreen mainScreen].bounds)){
             if ([window isKindOfClass:NSClassFromString(@"UIRemoteKeyboardWindow")] ||
                 [window isKindOfClass:NSClassFromString(@"UITextEffectsWindow")]) {
                 continue;
             }
             return window;
+        }
     }
     return [UIApplication sharedApplication].keyWindow;
 }
