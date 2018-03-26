@@ -94,12 +94,26 @@
 }
 +(UIWindow *)window
 {
-    UIWindow *window =  [[[UIApplication sharedApplication] windows] lastObject];
+    UIWindow *window =  [self lastWindow];
     if(window && !window.hidden) return window;
     window = [UIApplication sharedApplication].delegate.window;
     return window;
 }
-
++ (UIWindow *)lastWindow
+{
+    NSArray *windows = [UIApplication sharedApplication].windows;
+    for(UIWindow *window in [windows reverseObjectEnumerator]) {
+        if ([window isKindOfClass:[UIWindow class]] &&
+            CGRectEqualToRect(window.bounds, [UIScreen mainScreen].bounds)){
+            if ([window isKindOfClass:NSClassFromString(@"UIRemoteKeyboardWindow")] ||
+                [window isKindOfClass:NSClassFromString(@"UITextEffectsWindow")]) {
+                continue;
+            }
+            return window;
+        }
+    }
+    return [UIApplication sharedApplication].keyWindow;
+}
 - (void)showIn:(UIView *)view{
     self.contentView.center = view.center;
     [view  addSubview:self.contentView];
